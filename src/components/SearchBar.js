@@ -1,17 +1,37 @@
 import React from 'react';
-
+import { Paper, TextField } from '@material-ui/core';
 //class based components because we will be managing state
-
 
 class SearchBar extends React.Component {
 
   state = {
-    searchTerm: '',
+    searchFilter: '',
+  }
+
+  handeChange = event => {
+    console.log("From Search Bar", event.target.value)
+    this.setState({
+      searchFilter: event.target.value
+    })
+  }
+
+  handleSubmit = event => {
+    // prevents refresh of the page
+    event.preventDefault();
+    console.log("Search Value is ", this.state.searchFilter)
+
+    this.props.onSubmit(this.state.searchFilter)
   }
 
   render(){
     return (
-      <h1> Search Bar </h1>
+      <Paper elevation={6} style={{ padding: '25px' }}>
+        <form onSubmit={this.handleSubmit}>
+          <TextField fullWidth label = "Search..."
+            value={this.state.searchFilter}
+            onChange={this.handeChange}/>
+        </form>
+      </Paper>
     )
   }
 
