@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid } from "@material-ui/core";
-import VideoItem from './VideoItem'
+import VideoListItem from './VideoListItem'
 
 const VideoList = ({videos}) => {
    // console.log("List of Videos :",  props.videos);

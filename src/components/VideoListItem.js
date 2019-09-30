@@ -1,11 +1,11 @@
 import React from 'react';
 import { Grid, Paper, Typography } from "@material-ui/core";
 
-const VideoItem = props => {
+const VideoListItem = props => {
 
   return
   <div> Video List </div>
 
 }
 
-export default VideoItem
+export default VideoListItem
