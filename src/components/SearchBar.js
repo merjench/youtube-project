@@ -16,7 +16,7 @@ class SearchBar extends React.Component {
   }
 
   handleSubmit = event => {
-    // prevents refresh of the page 
+    // prevents refresh of the page
     event.preventDefault();
     // console.log("Search Value is ", this.state.searchFilter)
     this.props.onSubmit(this.state.searchFilter)
@@ -24,7 +24,7 @@ class SearchBar extends React.Component {
 
   render(){
     return (
-      <Paper elevation={6} style={{ padding: '25px' }}>
+      <Paper elevation={15} style={{ padding: '20px' }}>
         <form onSubmit={this.handleSubmit}>
           <TextField fullWidth label = "Search..."
             value={this.state.searchFilter}

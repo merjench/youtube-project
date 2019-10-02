@@ -10,7 +10,7 @@ const VideoInfo = ({videoInfo}) => {
 
   return (
     <React.Fragment>
-      <Paper elevation={6} style={{ height: "70%" }}>
+      <Paper elevation={5} style={{ height: "50%" }}>
         <iframe
           id="player"
           src={videoSrc}
