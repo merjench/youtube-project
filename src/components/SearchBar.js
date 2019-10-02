@@ -1,7 +1,7 @@
 import React from 'react';
 import { Paper, TextField } from '@material-ui/core';
-//class based components because we will be managing state
 
+//class based components because we will be managing state
 class SearchBar extends React.Component {
 
   state = {
@@ -18,8 +18,7 @@ class SearchBar extends React.Component {
   handleSubmit = event => {
     // prevents refresh of the page
     event.preventDefault();
-    console.log("Search Value is ", this.state.searchFilter)
-
+    // console.log("Search Value is ", this.state.searchFilter)
     this.props.onSubmit(this.state.searchFilter)
   }
 
@@ -34,7 +33,6 @@ class SearchBar extends React.Component {
       </Paper>
     )
   }
-
 }
 
 export default SearchBar;

@@ -1,8 +1,6 @@
 import React from 'react';
 import { Paper, Typography } from '@material-ui/core';
 
-
-
 const VideoInfo = ({videoInfo}) => {
   if(!videoInfo) return <div>Loading...</div>
 
@@ -13,7 +11,6 @@ const VideoInfo = ({videoInfo}) => {
       <Paper elevation={6} style={{ height: "70%" }}>
         <iframe
           id="player"
-          type="text/html"
           src={videoSrc}
           height="100%"
           width="100%"
@@ -25,10 +22,12 @@ const VideoInfo = ({videoInfo}) => {
         <Typography variant="h4">
           {videoInfo.snippet.title} - {videoInfo.snippet.channelTitle}
         </Typography>
-        <Typography variant="subtitle1">
+        <Typography variant="channel-title">
           {videoInfo.snippet.channelTitle}
         </Typography>
-        <Typography variant="subtitle2">{videoInfo.snippet.description}</Typography>
+        <Typography variant="description">
+          {videoInfo.snippet.description}
+        </Typography>
       </Paper>
     </React.Fragment>
 
