@@ -14,6 +14,10 @@ class App extends Component {
       selectedVideo: null,
     }
 
+    componentDidMount() {
+      this.onSearchSubmit('Game of thrown')
+    }
+
   onSearchSubmit = async (searchFilter) => {
     const response = await youtube.get('search', {
       params: {
@@ -24,28 +28,37 @@ class App extends Component {
       }
     });
     // debugger
-    console.log("video results", response.data.items);
+    // console.log("video results", response.data.items);
     this.setState({
       videos: response.data.items,
       selectedVideo: response.data.items[0]
     })
   }
 
+  onSelect = (video) => {
+    this.setState({
+      selectedVideo: video
+    })
+  }
+
   render() {
     // debugger
+    // console.log("Found :",this.state.videos.length)
     return (
       <Grid justify="center" container spacing={10}>
         <Grid item xs={12}>
           <Grid container spacing ={10}>
             <Grid item xs={12}>
               <SearchBar onSubmit={this.onSearchSubmit}/>
-               Found: {this.state.videos.length} videos
             </Grid>
             <Grid item xs={8}>
               <VideoInfo videoInfo={this.state.selectedVideo} />
             </Grid>
             <Grid item xs={4}>
-              <VideoList videos={this.state.videos} />
+              <VideoList
+                videos={this.state.videos}
+                onSelect={this.onSelect}
+                />
             </Grid>
           </Grid>
         </Grid>
