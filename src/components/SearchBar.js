@@ -9,7 +9,7 @@ class SearchBar extends React.Component {
   }
 
   handeChange = event => {
-    console.log("From Search Bar", event.target.value)
+    // console.log("From Search Bar", event.target.value)
     this.setState({
       searchFilter: event.target.value
     })

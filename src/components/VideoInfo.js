@@ -30,7 +30,6 @@ const VideoInfo = ({videoInfo}) => {
         </Typography>
       </Paper>
     </React.Fragment>
-
   );
 }
 
