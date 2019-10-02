@@ -9,14 +9,14 @@ import VideoInfo from './components/VideoInfo';
 
 class App extends Component {
 
-    state = {
-      videos: [],
-      selectedVideo: null,
-    }
+  state = {
+    videos: [],
+    selectedVideo: null,
+  }
 
-    componentDidMount() {
-      this.onSearchSubmit('Game of thrown')
-    }
+  componentDidMount() {
+    this.onSearchSubmit('Game of Thrones')
+  }
 
   onSearchSubmit = async (searchFilter) => {
     const response = await youtube.get('search', {
@@ -45,14 +45,18 @@ class App extends Component {
     // debugger
     // console.log("Found :",this.state.videos.length)
     return (
-      <Grid justify="center" container spacing={10}>
-        <Grid item xs={12}>
+      <Grid justify="center" container spacing={12}>
+        <Grid item xs={10}>
           <Grid container spacing ={10}>
             <Grid item xs={12}>
-              <SearchBar onSubmit={this.onSearchSubmit}/>
+              <SearchBar
+                onSubmit={this.onSearchSubmit}
+                />
             </Grid>
             <Grid item xs={8}>
-              <VideoInfo videoInfo={this.state.selectedVideo} />
+              <VideoInfo
+                videoInfo={this.state.selectedVideo}
+                />
             </Grid>
             <Grid item xs={4}>
               <VideoList
