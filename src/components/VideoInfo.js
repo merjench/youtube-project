@@ -1,12 +1,12 @@
 import React from 'react';
 import { Paper, Typography } from '@material-ui/core';
-// import Iframe from 'react-iframe';
+
 
 
 const VideoInfo = ({videoInfo}) => {
   if(!videoInfo) return <div>Loading...</div>
 
-  const videoSrc = `https://www.youtube.com/embed/${videoInfo.id.videoID}`
+  const videoSrc = `https://www.youtube.com/embed/${videoInfo.id.videoId}`
 
   return (
     <React.Fragment>
