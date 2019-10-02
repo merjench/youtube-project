@@ -16,7 +16,7 @@ class SearchBar extends React.Component {
   }
 
   handleSubmit = event => {
-    // prevents refresh of the page
+    // prevents refresh of the page 
     event.preventDefault();
     // console.log("Search Value is ", this.state.searchFilter)
     this.props.onSubmit(this.state.searchFilter)

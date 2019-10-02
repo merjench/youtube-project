@@ -2,7 +2,9 @@ import React from 'react';
 import { Paper, Typography } from '@material-ui/core';
 
 const VideoInfo = ({videoInfo}) => {
-  if(!videoInfo) return <div>Loading...</div>
+  if(!videoInfo) return (
+    <div>Loading...</div>
+  )
 
   const videoSrc = `https://www.youtube.com/embed/${videoInfo.id.videoId}`
 
@@ -19,13 +21,13 @@ const VideoInfo = ({videoInfo}) => {
           />
       </Paper>
       <Paper elevation={6} style={{ padding: "15px" }}>
-        <Typography variant="h4">
+        <Typography variant="h3">
           {videoInfo.snippet.title} - {videoInfo.snippet.channelTitle}
         </Typography>
-        <Typography variant="channel-title">
+        <Typography variant="h4">
           {videoInfo.snippet.channelTitle}
         </Typography>
-        <Typography variant="description">
+        <Typography variant="h5">
           {videoInfo.snippet.description}
         </Typography>
       </Paper>

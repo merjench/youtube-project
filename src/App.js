@@ -14,10 +14,12 @@ class App extends Component {
     selectedVideo: null,
   }
 
+// shows below search result when page initially loads instead of an empty page
   componentDidMount() {
     this.onSearchSubmit('Game of Thrones')
   }
 
+// ferch youtube data and update state
   onSearchSubmit = async (searchFilter) => {
     const response = await youtube.get('search', {
       params: {
@@ -35,6 +37,7 @@ class App extends Component {
     })
   }
 
+// on selecting a new video, change state
   onSelect = (video) => {
     this.setState({
       selectedVideo: video
